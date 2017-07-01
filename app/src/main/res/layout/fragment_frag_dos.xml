@@ -1,0 +1,93 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.diego.myapplicationx.FragUno"
+    android:background="@color/colorPrimary">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.constraint.Guideline
+        android:id="@+id/HorizontalFinal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal40"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/HorizontalInicial"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal35"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/VerticalFinal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/Vertical50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/VerticalInicio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textoasignatura"
+        app:layout_constraintBottom_toTopOf="@+id/HorizontalFinal"
+        app:layout_constraintTop_toBottomOf="@+id/HorizontalInicial"
+        app:layout_constraintRight_toLeftOf="@+id/VerticalFinal"
+        app:layout_constraintLeft_toLeftOf="@+id/VerticalInicio"
+        android:background="#FFFF"/>
+
+    <!---<Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/bCerrar"
+        android:background="#FFFF"
+        app:layout_constraintBottom_toTopOf="@+id/HorizontalFinal"
+        app:layout_constraintTop_toBottomOf="@+id/Horizontal50"
+        app:layout_constraintRight_toLeftOf="@+id/VerticalFinal"
+        app:layout_constraintLeft_toLeftOf="@+id/Vertical50"/> -->
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

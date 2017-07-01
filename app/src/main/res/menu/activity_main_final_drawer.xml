@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_Inicio"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_Notas"
+            android:icon="@drawable/ic_notas"
+            android:title="Notas" />
+        <item
+            android:id="@+id/nav_Asistencia"
+            android:icon="@drawable/ic_asis"
+            android:title="Asistencia" />
+        <item
+            android:id="@+id/nav_Comunicados"
+            android:icon="@drawable/ic_com"
+            android:title="Comunicados" />
+    </group>
+
+    <item android:title="Información adicional">
+        <menu>
+            <item
+                android:id="@+id/nav_Acercade"
+                android:icon="@drawable/ic_acercade"
+                android:title="Acerca de" />
+            <item
+                android:id="@+id/nav_Cerrarsesion"
+                android:icon="@drawable/ic_cerrarsesion"
+                android:title="Cerrar sesión" />
+        </menu>
+    </item>
+
+</menu>

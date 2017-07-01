@@ -1,0 +1,133 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.diego.myapplicationx.FragUno"
+    android:background="#8fa3ea"
+    android:id="@+id/frag1">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal30"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/Vertical20"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+    <android.support.constraint.Guideline
+        android:id="@+id/Vertical80"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/HorizontalFinal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/Horizontal65"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/Horizontal40"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/HorizontalInicial"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/Horizontal35"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/VerticalFinal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/Vertical50"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            />
+        <android.support.constraint.Guideline
+            android:id="@+id/VerticalInicio"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"
+            />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/pieChart"
+            app:layout_constraintTop_toBottomOf="@+id/Horizontal10"
+            app:layout_constraintRight_toLeftOf="@+id/VerticalFinal"
+            app:layout_constraintBottom_toTopOf="@id/Horizontal30"
+            app:layout_constraintLeft_toLeftOf="@+id/VerticalInicio"/>
+
+
+        <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        app:layout_constraintTop_toBottomOf="@+id/Horizontal65"
+        app:layout_constraintRight_toLeftOf="@+id/VerticalFinal"
+        app:layout_constraintBottom_toTopOf="@id/HorizontalFinal"
+        app:layout_constraintLeft_toLeftOf="@+id/VerticalInicio">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearenscroll">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/TextoAsistencia"
+                    android:textSize="16dp"
+                    android:textStyle="bold|italic"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

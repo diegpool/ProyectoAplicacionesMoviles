@@ -1,0 +1,114 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.diego.myapplicationx.FragInicio">
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal90"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal40"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal15"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Horizontal35"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Vertical90"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/Vertical50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+    <android.support.constraint.Guideline
+        android:id="@+id/Vertical10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/bienvenido"
+        app:layout_constraintBottom_toTopOf="@+id/Horizontal35"
+        app:layout_constraintTop_toBottomOf="@+id/Horizontal15"
+        app:layout_constraintRight_toLeftOf="@+id/Vertical90"
+        app:layout_constraintLeft_toLeftOf="@+id/Vertical10"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/bCerrar"
+        app:layout_constraintBottom_toTopOf="@+id/Horizontal90"
+        app:layout_constraintTop_toBottomOf="@+id/Horizontal50"
+        app:layout_constraintRight_toLeftOf="@+id/Vertical90"
+        app:layout_constraintLeft_toLeftOf="@+id/Vertical50"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/bAsistencia"
+        app:layout_constraintBottom_toTopOf="@+id/Horizontal50"
+        app:layout_constraintTop_toBottomOf="@+id/Horizontal40"
+        app:layout_constraintRight_toLeftOf="@+id/Vertical90"
+        app:layout_constraintLeft_toLeftOf="@+id/Vertical50"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/bComunicados"
+        app:layout_constraintBottom_toTopOf="@+id/Horizontal90"
+        app:layout_constraintTop_toBottomOf="@+id/Horizontal50"
+        app:layout_constraintRight_toLeftOf="@+id/Vertical50"
+        app:layout_constraintLeft_toLeftOf="@+id/Vertical10"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/bNotas"
+        app:layout_constraintBottom_toTopOf="@+id/Horizontal50"
+        app:layout_constraintTop_toBottomOf="@+id/Horizontal40"
+        app:layout_constraintRight_toLeftOf="@+id/Vertical50"
+        app:layout_constraintLeft_toLeftOf="@+id/Vertical10"/>
+</android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
