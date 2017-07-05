@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +30,7 @@ public class FragInicio extends Fragment {
     Button Cerrar,Notas,Asistencia,Comunicados;
     FragmentManager fragmentManager;
     ImageView img;
+    TextView bien;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

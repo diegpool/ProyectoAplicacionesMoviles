@@ -2,16 +2,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.diego.myapplicationx.FragUno"
-    android:background="@color/colorPrimaryDark">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/textoComunicado"
-        android:text="Hola"
-        android:textSize="18dp"/>
-</LinearLayout>
+    android:background="@drawable/hoja">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <android.support.constraint.Guideline
+                    android:id="@+id/Horizontal90"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.9"
+                    />
+                <android.support.constraint.Guideline
+                    android:id="@+id/Horizontal80"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.8"
+                    />
+                <android.support.constraint.Guideline
+                    android:id="@+id/Horizontal10"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.1"
+                    />
+                <android.support.constraint.Guideline
+                    android:id="@+id/Vertical90"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.9"
+                    />
+                <android.support.constraint.Guideline
+                    android:id="@+id/Vertical10"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1"/>
+
+                <GridView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:id="@+id/gridcom"
+                    app:layout_constraintBottom_toTopOf="@+id/Horizontal90"
+                    app:layout_constraintTop_toBottomOf="@+id/Horizontal10"
+                    app:layout_constraintRight_toLeftOf="@+id/Vertical90"
+                    app:layout_constraintLeft_toLeftOf="@+id/Vertical10"/>
+
+        </android.support.constraint.ConstraintLayout>
+
 </FrameLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:shrinkColumns="1">
+    <TableRow>
+        <TextView
+            android:id="@+id/texto_grid"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/img_miau"
+            android:layout_gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </TableRow>
+</TableLayout>
+

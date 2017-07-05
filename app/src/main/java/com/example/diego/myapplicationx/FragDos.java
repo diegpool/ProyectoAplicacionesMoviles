@@ -13,12 +13,13 @@ import java.util.ArrayList;
 public class FragDos extends Fragment {
     Apoderado apoderado;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_frag_dos, container, false);
-        getActivity().setTitle("Notas");
         apoderado = ((MainActivityFinal)getActivity()).getApoderado();
+
+        String n_alumno = apoderado.getAlumnos_apoderado().get(0).getNombre_alumno()+ " " + apoderado.getAlumnos_apoderado().get(0).getApellido_alumno();
+        getActivity().setTitle("Notas "+n_alumno);
         TextView miauasignatura = (TextView) rootView.findViewById(R.id.textoasignatura);
         ArrayList<String> asignaturas = apoderado.getTodasAsignaturas(0);
         String[][] NombreNotas = apoderado.getNombreEvaluacion(0,0);

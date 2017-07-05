@@ -1,14 +1,12 @@
 package com.example.diego.myapplicationx;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,45 +18,34 @@ import com.github.mikephil.charting.data.PieDataSet;
 
 import java.util.ArrayList;
 
-import static android.graphics.Color.BLACK;
-import static android.graphics.Color.BLUE;
-import static android.graphics.Color.RED;
-import static android.graphics.Color.WHITE;
 
 public class FragUno extends Fragment {
     public TextView texto;
     public Button boton;
     public Apoderado ap;
     private PieChart pieChart;
-    public ScrollView scrollView;
+
+    ArrayList<Dia> Asist;
+    private GridView gridView;
+    private GridAdapterAsis adapter;
     float w,h;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         ap = ((MainActivityFinal)getActivity()).getApoderado();
         View rootView = inflater.inflate(R.layout.fragment_frag_uno, container, false);
-        texto = (TextView) rootView.findViewById(R.id.TextoAsistencia);
-        getActivity().setTitle("Asistencia");
+        String n_alumno = ap.getAlumnos_apoderado().get(0).getNombre_alumno() + " " + ap.getAlumnos_apoderado().get(0).getApellido_alumno();
+        getActivity().setTitle("Asistencia "+n_alumno);
         PieChart chart = (PieChart) rootView.findViewById(R.id.pieChart);
         chart = configureChart(chart);
         chart = setData(chart);
         chart.animateXY(1500, 1500);
-        scrollView = (ScrollView) rootView.findViewById(R.id.scrollView);
-        ArrayList<Alumno> alumnos = ap.getAlumnos_apoderado();
-        String asis = "Asistencia ";
-        Alumno alumno = alumnos.get(0);
-            asis = asis + alumno.getNombre_alumno() + "\n";
-            ArrayList<Dia> asistencia = alumno.getAsistencia();
-            for(Dia dia : asistencia){
-                if(dia.getPresente().equals("1")) {
-                    asis = asis + dia.getFecha() + " : presente\n";
-                }else{
-                    asis = asis + dia.getFecha() + " : ausente\n";
-                }
-            }
-            asis = asis + "\n";
+        Asist = ap.getAsistencia();
+        gridView = (GridView) rootView.findViewById(R.id.gridasis);
+        adapter = new GridAdapterAsis(getContext(),Asist);
+        gridView.setAdapter(adapter);
+        gridView.setNumColumns(1);
 
-        texto.setText(asis);
 
         return rootView;
 
@@ -80,7 +67,7 @@ public class FragUno extends Fragment {
 
     private PieChart setData(PieChart chart) {
         ArrayList<Entry> yVals1 = new ArrayList<Entry>();
-        ArrayList<Double> asis = ap.getAsistenciasPje(0);
+        ArrayList<Double> asis = ap.getAsistenciasPje();
         int presente = asis.get(0).intValue();
         int ausente = asis.get(1).intValue();
         yVals1.add(new Entry(presente, 0));
@@ -97,6 +84,7 @@ public class FragUno extends Fragment {
         PieData data = new PieData(xVals, set1);
         chart.setData(data);
         chart.highlightValues(null);
+        chart.setCenterTextSize(15);
         chart.invalidate();
         return chart;
     }

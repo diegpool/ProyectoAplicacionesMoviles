@@ -34,6 +34,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 
 
 public class MainActivityFinal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,6 +49,7 @@ public class MainActivityFinal extends AppCompatActivity implements NavigationVi
     final String[] emisores = new String[3];
     final String[] fechas = new String[3];
     final String[] informacion = new String[3];
+    ArrayList<Comunicado> Coms = new ArrayList<>();
 
 
     DatabaseReference mDbR = FirebaseDatabase.getInstance().getReference();
@@ -91,34 +93,17 @@ public class MainActivityFinal extends AppCompatActivity implements NavigationVi
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         k = 0;
-        Comunicados = "";
+        //Comunicados = "";
         Com.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
-                    System.out.println("Primer for : " + dataSnapshot1.getKey());
-                    for(DataSnapshot comunicados : dataSnapshot1.getChildren()){
-                        System.out.println("Segundo for : " + comunicados.getKey());
-                        switch (comunicados.getKey()){
-                            case "emisor":
-                                emisores[k] = comunicados.getValue().toString();
-                                System.out.println(emisores[k]);
-                                break;
-                            case "fecha":
-                                fechas[k] = comunicados.getValue().toString();
-                                break;
-                            case "informacion":
-                                informacion[k] = comunicados.getValue().toString();
-                                break;
-                        }
-
-                    }
-                    k++;
-                }
+                    Coms.add(new Comunicado(dataSnapshot1));
+                }/*
                 Comunicados = "\n\n";
                 for(int i = 0; i<3 ; i++){
                     Comunicados = Comunicados+"\t\tDe: " + emisores[i] + "\n" +"\t\tFecha :" + fechas[i] + "\n\n\t" + informacion[i] + "\n\n\n";
-                }
+                }*/
             }
 
             @Override
@@ -164,6 +149,18 @@ public class MainActivityFinal extends AppCompatActivity implements NavigationVi
     }
     public DatabaseReference getmDbR(){return mDbR;}
     public String getComunicados(){return Comunicados;}
+    public ArrayList<Comunicado> getComs(){
+        return Coms;
+    }
+    public String[] getEmisores(){
+        return emisores;
+    }
+    public String[] getFechas(){
+        return fechas;
+    }
+    public String[] getInformacion(){
+        return informacion;
+    }
 
 
     @Override
